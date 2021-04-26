@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/desktop/textures/DialogWindow.png" type="Texture" id=1]
+[ext_resource path="res://sprites/desktop/icons/close/CloseNormalFontX.png" type="Texture" id=2]
+[ext_resource path="res://fonts/JonWorldCompressed.tres" type="DynamicFont" id=3]
+[ext_resource path="res://sprites/desktop/icons/close/ClosePressedFontX.png" type="Texture" id=4]
+[ext_resource path="res://src/desktop/Window.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 63, 48 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 17.0
+margin_bottom = 4.0
+expand_margin_top = 14.0
+
+[node name="Window" type="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -120.0
+margin_right = 40.68
+margin_bottom = 3.0
+rect_min_size = Vector2( 0, 30 )
+focus_mode = 2
+input_pass_on_modal_close_click = false
+custom_icons/close_highlight = ExtResource( 4 )
+custom_icons/close = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
+custom_fonts/title_font = ExtResource( 3 )
+custom_colors/title_color = Color( 1, 1, 1, 1 )
+custom_constants/close_h_ofs = 16
+custom_constants/close_v_ofs = 10
+custom_constants/title_height = 10
+popup_exclusive = true
+window_title = "Test Window!"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

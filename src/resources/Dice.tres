@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/resources/Dice.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+type = 0
+effect = 0
+value = 0
+values = [ 1, 2, 3, 4, 5, 6 ]

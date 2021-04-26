@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/resources/Reward.gd" type="Script" id=1]
+[ext_resource path="res://sprites/battle/rewards/HealingDie.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+title = "HEAL DICE"
+description = "Adds a dice that heals you"
+icon = ExtResource( 2 )

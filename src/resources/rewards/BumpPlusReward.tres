@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/resources/Reward.gd" type="Script" id=1]
+[ext_resource path="res://sprites/battle/rewards/UpgradeAbility.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+title = "BUMP+"
+description = "(UPGRADE) Adds +2 to any dice"
+icon = ExtResource( 2 )

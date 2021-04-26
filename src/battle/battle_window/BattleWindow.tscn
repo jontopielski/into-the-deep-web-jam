@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/desktop/Window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/battle/battle/Battle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/battle/battle_window/BattleWindow.gd" type="Script" id=3]
+
+[node name="BattleWindow" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -120.0
+margin_right = -160.0
+margin_bottom = -120.0
+mouse_filter = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Window" parent="." instance=ExtResource( 1 )]
+visible = true
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 301.0
+margin_bottom = 213.0
+window_title = "BATTLE!"
+
+[node name="MarginContainer" type="MarginContainer" parent="Window"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 3
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battle" parent="Window/MarginContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 275.0
+margin_bottom = 179.0
+[connection signal="won_battle" from="Window/MarginContainer/Battle" to="." method="_on_Battle_won_battle"]

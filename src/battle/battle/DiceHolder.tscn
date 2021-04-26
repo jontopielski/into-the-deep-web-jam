@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/battle/dice/Dice.png" type="Texture" id=1]
+[ext_resource path="res://src/battle/battle/DiceHolder.gd" type="Script" id=2]
+[ext_resource path="res://sprites/battle/dice/DiceFocus.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11, 11 )
+
+[node name="DiceHolder" type="Node2D"]
+script = ExtResource( 2 )
+fire_color = Color( 0.831373, 0.0941176, 0.0941176, 1 )
+heal_color = Color( 0.0470588, 0.772549, 0.0352941, 1 )
+
+[node name="Focus" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 7
+frame = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

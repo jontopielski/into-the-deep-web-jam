@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://src/resources/enemies/Whistler.tres" type="Resource" id=1]
+[ext_resource path="res://src/state/StateObject.gd" type="Script" id=2]
+[ext_resource path="res://src/resources/Dice.gd" type="Script" id=3]
+[ext_resource path="res://src/resources/abilities/Bump.tres" type="Resource" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+type = 0
+effect = 0
+value = 0
+values = [ 1, 2, 3, 4, 5, 6 ]
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+type = 0
+effect = 0
+value = 0
+values = [ 1, 2, 3, 4, 5, 6 ]
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+type = 0
+effect = 0
+value = 0
+values = [ 1, 2, 3, 4, 5, 6 ]
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 3 )
+type = 0
+effect = 0
+value = 0
+values = [ 1, 2, 3, 4, 5, 6 ]
+
+[resource]
+script = ExtResource( 2 )
+dice_deck = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
+dice_draw_pile = [  ]
+dice_discard_pile = [  ]
+abilities = [ ExtResource( 4 ) ]
+current_enemy = ExtResource( 1 )
+player_speed = 2.25
+max_player_health = 30
+current_player_health = 30
+current_enemy_health = 0
+dragged_ability = "NONE"

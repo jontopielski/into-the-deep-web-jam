@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://sprites/battle/abilities/BumpPlus.png" type="Texture" id=1]
+[ext_resource path="res://src/resources/Ability.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+name = "Bump+"
+description = "+2 to any dice"
+sprite = ExtResource( 1 )
+cooldown = 5.0

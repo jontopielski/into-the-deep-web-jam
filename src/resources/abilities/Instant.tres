@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/resources/Ability.gd" type="Script" id=1]
+[ext_resource path="res://sprites/battle/abilities/Instant.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Instant"
+description = "Use dice instantly"
+sprite = ExtResource( 2 )
+cooldown = 12.0

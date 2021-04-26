@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/desktop/Window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/desktop/Reward.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/desktop/RewardWindow.gd" type="Script" id=3]
+
+[node name="RewardWindow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Window" parent="." instance=ExtResource( 1 )]
+visible = true
+margin_left = -99.0
+margin_top = -67.0
+margin_right = 101.68
+margin_bottom = 56.0
+window_title = "Select Reward"
+
+[node name="Rewards" type="HBoxContainer" parent="Window"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 8.0
+margin_right = -6.67999
+margin_bottom = -9.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RewardLeft" parent="Window/Rewards" instance=ExtResource( 2 )]
+visible = false
+margin_right = 83.0
+margin_bottom = 106.0
+
+[node name="RewardRight" parent="Window/Rewards" instance=ExtResource( 2 )]
+visible = false
+margin_right = 187.0
+margin_bottom = 106.0
+
+[node name="CloseBlock" type="ColorRect" parent="Window"]
+margin_left = 170.0
+margin_top = -23.0
+margin_right = 217.0
+margin_bottom = 15.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="reward_accepted" from="Window/Rewards/RewardLeft" to="." method="_on_Reward_reward_accepted"]
+[connection signal="reward_accepted" from="Window/Rewards/RewardRight" to="." method="_on_Reward_reward_accepted"]
