@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 name = "Whistler"
 sprite = ExtResource( 2 )
-health = 18
+health = 16
 damage = 4
 damage_range = 1
-speed = 3.85
+speed = 3.96
