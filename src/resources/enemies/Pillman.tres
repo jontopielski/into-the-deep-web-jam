@@ -10,4 +10,4 @@ sprite = ExtResource( 2 )
 health = 35
 damage = 2
 damage_range = 1
-speed = 2.25
+speed = 2.11

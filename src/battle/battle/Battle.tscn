@@ -25,6 +25,7 @@
 [ext_resource path="res://src/battle/battle/SpeedPercent.gd" type="Script" id=23]
 [ext_resource path="res://src/battle/battle/CritPercent.gd" type="Script" id=24]
 [ext_resource path="res://src/battle/battle/CritLabel.gd" type="Script" id=25]
+[ext_resource path="res://sprites/battle/dice/DiceFocus.png" type="Texture" id=26]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -177,14 +178,6 @@ bg_color = Color( 0, 0, 0, 1 )
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0, 0.215686, 1, 1 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0, 0, 0, 1 )
@@ -574,7 +567,7 @@ __meta__ = {
 pause_mode = 2
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 3 )
-position = Vector2( 242, 40 )
+position = Vector2( 222, 40 )
 texture = ExtResource( 2 )
 flip_h = true
 script = ExtResource( 17 )
@@ -788,15 +781,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextPanel" type="Panel" parent="DicePanel"]
+[node name="NextPanel" type="TextureRect" parent="DicePanel"]
+modulate = Color( 0, 0.215686, 1, 1 )
 margin_left = 12.0
-margin_top = 89.0
-margin_right = 39.0
-margin_bottom = 116.0
-custom_styles/panel = SubResource( 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 88.0
+margin_right = 41.0
+margin_bottom = 117.0
+texture = ExtResource( 26 )
 
 [node name="Next" type="Label" parent="DicePanel"]
 margin_left = 13.0
@@ -1287,14 +1278,15 @@ __meta__ = {
 anims/show = SubResource( 28 )
 
 [node name="Tween" type="Tween" parent="PlayerDamage"]
+
+[connection signal="paused" from="." to="EnemyBattleUI" method="_on_Battle_paused"]
 [connection signal="paused" from="." to="PlayerBattleUI" method="_on_Battle_paused"]
 [connection signal="paused" from="." to="CritLabel" method="_on_Battle_paused"]
-[connection signal="paused" from="." to="EnemyBattleUI" method="_on_Battle_paused"]
 [connection signal="paused" from="." to="EnemyDamage" method="_on_Battle_paused"]
 [connection signal="paused" from="." to="PlayerDamage" method="_on_Battle_paused"]
+[connection signal="unpaused" from="." to="EnemyBattleUI" method="_on_Battle_unpaused"]
 [connection signal="unpaused" from="." to="PlayerBattleUI" method="_on_Battle_unpaused"]
 [connection signal="unpaused" from="." to="CritLabel" method="_on_Battle_unpaused"]
-[connection signal="unpaused" from="." to="EnemyBattleUI" method="_on_Battle_unpaused"]
 [connection signal="unpaused" from="." to="EnemyDamage" method="_on_Battle_unpaused"]
 [connection signal="unpaused" from="." to="PlayerDamage" method="_on_Battle_unpaused"]
 [connection signal="attacked" from="EnemyBattleUI" to="EnemySprite" method="_on_EnemyBattleUI_attacked"]

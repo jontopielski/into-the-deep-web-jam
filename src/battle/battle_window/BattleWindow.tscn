@@ -20,7 +20,6 @@ __meta__ = {
 }
 
 [node name="Window" parent="." instance=ExtResource( 1 )]
-visible = true
 margin_left = 24.0
 margin_top = 32.0
 margin_right = 301.0
@@ -46,4 +45,5 @@ margin_left = 2.0
 margin_top = 3.0
 margin_right = 275.0
 margin_bottom = 179.0
+
 [connection signal="won_battle" from="Window/MarginContainer/Battle" to="." method="_on_Battle_won_battle"]

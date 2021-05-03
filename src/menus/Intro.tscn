@@ -181,5 +181,6 @@ texture = ExtResource( 2 )
 anims/outro = SubResource( 3 )
 anims/shrink = SubResource( 4 )
 anims/warp = SubResource( 5 )
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -310,4 +310,5 @@ script = ExtResource( 12 )
 
 [node name="Story" type="Node" parent="States"]
 script = ExtResource( 13 )
+
 [connection signal="timeout" from="States/Battle/DelayTimer" to="States/Battle" method="_on_DelayTimer_timeout"]
